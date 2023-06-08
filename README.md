@@ -26,7 +26,7 @@ A data precisou de uma transformação desde o ínicio para adaptar aos requisit
 
 Com esta transformação consegui descubrir e entender o primeiro desafio do projeto. O balance das classes do target.
 
-![Target balance](https://raw.githubusercontent.com/liamarguedas/data/main/Data-Science/Steam-Games-Price/Summary-Charts/target-balance.png)
+![Target balance](https://raw.githubusercontent.com/liamarguedas/steam-games-price/main/Summary-Charts/target-balance.png)
 
 
 É possível ver que a grande maioria de jogos estavam na classe Barato, pelo qual não seria um grande problema classificar a mesma. Porém podemos ver que a classe Caro contêm menos de 100 jogos (Menos do 10% do dataset) o qual dificulta a classificação. Por isso meu foco ficou em criar uma classificação funcional, para fazer isso eficientemente a solução devia ter:
@@ -41,25 +41,25 @@ Com esta transformação consegui descubrir e entender o primeiro desafio do pro
 
 Para realizar uma implantação dessa forma foi necessário realizar a exploração de cada atributo junto com nosso target e entender a relação entre eles, no gráfico a seguir podemos ver a correlação dos atributos e Preço do jogo (Na sua forma continua):
 
-![Preço correlations](https://raw.githubusercontent.com/liamarguedas/data/main/Data-Science/Steam-Games-Price/Summary-Charts/target-correlations.png)
+![Preço correlations](https://raw.githubusercontent.com/liamarguedas/steam-games-price/main/Summary-Charts/target-correlations.png)
 
 Podemos ver logo que o Score do Metacritic e o ano de lançamento são atributos sumamente importantes para determinar o preço de um jogo, ao analisar os lançamentos dos jogos podemos perceber o seguinte:
 
 
-![Lançamento de jogos](https://raw.githubusercontent.com/liamarguedas/data/main/Data-Science/Steam-Games-Price/Summary-Charts/Jogos-por-ano-e-preco.png)
+![Lançamento de jogos](https://raw.githubusercontent.com/liamarguedas/steam-games-price/main/Summary-Charts/Jogos-por-ano-e-preco.png)
 
 No dataset são tratados os jogos mais jogos (Top Games), podemos perceber que a grande maioria de jogos são dos ultimos 3 anos (2020, 2021, 2022) o qual descreve muito bem o preço, pois, jogos antigos serão mais baratos que jogos lançados recentemente. Por isso no gráfico de ano vs. preço é possível ver uma relação linear crescente (Tirando certos outliers dos anos 2011, 2012, 2013)
 
 Na analise exploratoria foi encontrado também uma relação bastante particular, as resenhas dos Curator (Pode se considerar um Curator como Influencer do gaming) junto com as resenhas dos usuários normais. Ao gráficar essa relação encontramos: 
 
-![Relação linear reviews](https://raw.githubusercontent.com/liamarguedas/data/main/Data-Science/Steam-Games-Price/Summary-Charts/relacao-linear-reviews.png)
+![Relação linear reviews](https://raw.githubusercontent.com/liamarguedas/steam-games-price/main/Summary-Charts/relacao-linear-reviews.png)
 
 Com o aumento das resenhas de usuários as resenhas de  Curator também apresentaba um aumento. É fácil de explicar tal relação, pois, usualmente Curators fazem resenhas de jogos mais populares, por isso, tais jogos jogos populares tem milhares de resenhas de usuários. 
 
 
 Também foi curioso entender as estadisticas da Steam e compreender que a grande maioria de jogos no Top são de Um jogador, além de outros atributos, tais que:
 
-![Features](https://raw.githubusercontent.com/liamarguedas/data/main/Data-Science/Steam-Games-Price/Summary-Charts/jogos-features.png)
+![Features](https://raw.githubusercontent.com/liamarguedas/steam-games-price/main/Summary-Charts/jogos-features.png)
 
 Como parte do resumo minha tarefa foi trazer algumas das descubertas mais importantes na analise exploratoria, porém eu recomendo ler o projeto inteiro para se familiarizar com a data e realmente comprender que descreve e como descreve nosso target. Pode ler o projeto inteiro fazendo [click aqui](https://github.com/liamarguedas/data/blob/main/Data-Science/Steam-Games-Price/Steam-Games-Price-pt-br.ipynb).
 
@@ -165,7 +165,7 @@ Ao trabalharmos com um problema de classificação multi-classe, resolvimos trei
 
 Após o treinamento utilizando validação cruzada, obtemos os seguintes resultados:
 
-![Model Performance](https://raw.githubusercontent.com/liamarguedas/data/main/Data-Science/Steam-Games-Price/Summary-Charts/Model-statistics.png)
+![Model Performance](https://raw.githubusercontent.com/liamarguedas/steam-games-price/main/Summary-Charts/Model-statistics.png)
 
 Depois de 5 CV, podemos perceber que os 2 modelos a serem considerados foram RandomForest e GradientBoosting, o qual leva para a decisão final.
 
@@ -173,7 +173,7 @@ Depois de 5 CV, podemos perceber que os 2 modelos a serem considerados foram Ran
 
 Para solucionar o problema, resolvi utilizar GradientBoosting, pois apresentou uma melhor variação de metricas depois da validação cruzada e outros testes efetuados no projeto. Sabendo o modelo a ser usado, eu comecei com a otimização de parametros para encontrar que parametros do modelo afetam o score na data de treinamento. Os resultados encontrados foram os seguintes:
 
-![Parametros](https://raw.githubusercontent.com/liamarguedas/data/main/Data-Science/Steam-Games-Price/Summary-Charts/otimiza%C3%A7%C3%A3o-parametros.png)
+![Parametros](https://raw.githubusercontent.com/liamarguedas/steam-games-price/main/Summary-Charts/otimiza%C3%A7%C3%A3o-parametros.png)
 
 Podemos enxergar que:
 
@@ -187,11 +187,11 @@ Sabendo o que melhor e piora o score do GradientBoost foi treinando novamente ot
 
 **GradientBoosting SEM otimização de parametros**
 
-![GBNoOpt](https://raw.githubusercontent.com/liamarguedas/data/main/Data-Science/Steam-Games-Price/Summary-Charts/gradient-boost-performance-sem-otimizacao.png)
+![GBNoOpt](https://raw.githubusercontent.com/liamarguedas/steam-games-price/main/Summary-Charts/gradient-boost-performance-sem-otimizacao.png)
 
 **GradientBoosting COM otimização de parametros**
 
-![GBOpt](https://raw.githubusercontent.com/liamarguedas/data/main/Data-Science/Steam-Games-Price/Summary-Charts/gradient-boost-performance-otimizado.png)
+![GBOpt](https://raw.githubusercontent.com/liamarguedas/steam-games-price/main/Summary-Charts/gradient-boost-performance-otimizado.png)
 
 ## Implantação em produção
 
