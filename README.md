@@ -61,7 +61,7 @@ Também foi curioso entender as estadisticas da Steam e compreender que a grande
 
 ![Features](https://raw.githubusercontent.com/liamarguedas/steam-games-price/main/Summary-Charts/jogos-features.png)
 
-Como parte do resumo minha tarefa foi trazer algumas das descubertas mais importantes na analise exploratoria, porém eu recomendo ler o projeto inteiro para se familiarizar com a data e realmente comprender que descreve e como descreve nosso target. Pode ler o projeto inteiro fazendo [click aqui](https://github.com/liamarguedas/data/blob/main/Data-Science/Steam-Games-Price/Steam-Games-Price-pt-br.ipynb).
+Como parte do resumo minha tarefa foi trazer algumas das descubertas mais importantes na analise exploratoria, porém eu recomendo ler o projeto inteiro para se familiarizar com a data e realmente comprender que descreve e como descreve nosso target. Pode ler o projeto inteiro fazendo [click aqui](https://github.com/liamarguedas/steam-games-price/blob/main/Steam-Games-Price-pt-br.ipynb).
 
 ### Perfil Target
 
